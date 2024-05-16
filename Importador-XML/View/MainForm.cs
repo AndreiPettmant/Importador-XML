@@ -1,12 +1,11 @@
 using Importador_XML.Control;
-using Importador_XML.Model;
-using System.Xml;
+using Importador_XML.View;
 
 namespace Importador_XML
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -93,5 +92,32 @@ namespace Importador_XML
                 clsXMLController.LerXML(arquivoSelecionado, dataGridView1, txtCodigoCartorio.Text, dtSelecionarData.Value, numPorcentagemCustas.Value);
             }
         }
+
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null && !dataGridView1.CurrentRow.IsNewRow)
+            {
+                // Lista para armazenar os valores das células
+                List<string> cellValues = new List<string>();
+
+                // Itera sobre as células na linha clicada
+                foreach (DataGridViewCell cell in dataGridView1.CurrentRow.Cells)
+                {
+                    // Adiciona o valor da célula à lista
+                    if (cell.Value != null)
+                    {
+                        cellValues.Add(cell.Value.ToString());
+                    }
+                }
+
+                // Cria uma nova instância do formulário XMLSingleViewForm, passando os valores das células como parâmetros
+                XMLSingleViewForm xMLSingleViewForm = new XMLSingleViewForm(cellValues.ToArray());
+
+                // Exibe o formulário
+                xMLSingleViewForm.ShowDialog();
+            }
+        }
+
     }
 }

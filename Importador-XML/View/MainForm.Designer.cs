@@ -1,6 +1,8 @@
-﻿namespace Importador_XML
+﻿using System.Windows.Forms;
+
+namespace Importador_XML
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -80,6 +82,7 @@
             dataGridView1.Size = new Size(733, 175);
             dataGridView1.TabIndex = 3;
             dataGridView1.RowsAdded += dataGridView1_RowsAdded;
+            dataGridView1.Click += dataGridView1_Click;
             // 
             // lblCodigoCartorio
             // 
@@ -145,7 +148,7 @@
             numPorcentagemCustas.Value = new decimal(new int[] { 10, 0, 0, 0 });
             numPorcentagemCustas.ValueChanged += numPorcentagemCustas_ValueChanged;
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -161,7 +164,8 @@
             Controls.Add(txtNomeArquivo);
             Controls.Add(btnSelecionarArquivo);
             Controls.Add(btnImportarXML);
-            Name = "Form1";
+            Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Importador XML";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
