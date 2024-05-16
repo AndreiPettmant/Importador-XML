@@ -19,3 +19,7 @@
 
 Solução desenvolvida em Windows Forms onde na tela inicial teremos dois botões, um responsável por trazer o arquivo do XML e outro responsável por fazer a importação do mesmo no banco de dados. Além disso, temos alguns campos para poder realizar a inserção de data e valor de custo além do campo responsável pelo número do cartório que está limitado a 7 caracteres. Possui também na aplicação um DataGridView responsável por trazer as informações do XML onde é possível alterar informações e deletar linhas se necessário. Quando importar o XML para o banco de dados, o botão de importação ficará inativo até um novo arquivo ser validado. Foi adicionado também um evento que ao clicar em uma das linhas abrirá um novo formulário trazendo as informações de forma invidividual do título clicado.
 
+#### Arquivo bak.
+| Nome da Pasta| Descrição                           |
+| :---------- | :---------------------------------- |
+| `bak.` | **O arquivo se encontra na pasta raíz do projeto** |
