@@ -111,11 +111,12 @@
             // txtCodigoCartorio
             // 
             txtCodigoCartorio.Location = new Point(130, 110);
+            txtCodigoCartorio.MaxLength = 7;
             txtCodigoCartorio.Name = "txtCodigoCartorio";
-            txtCodigoCartorio.ReadOnly = true;
             txtCodigoCartorio.Size = new Size(234, 23);
             txtCodigoCartorio.TabIndex = 7;
             txtCodigoCartorio.Text = "1234567";
+            txtCodigoCartorio.TextChanged += txtCodigoCartorio_TextChanged;
             // 
             // txtLogo
             // 
@@ -178,9 +179,9 @@
         private Label lblCodigoCartorio;
         private Label lblDataApresentacao;
         private Label lblValorCustas;
-        private TextBox txtCodigoCartorio;
         private Label txtLogo;
         private DateTimePicker dtSelecionarData;
         private NumericUpDown numPorcentagemCustas;
+        public TextBox txtCodigoCartorio;
     }
 }

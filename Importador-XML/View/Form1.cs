@@ -82,5 +82,16 @@ namespace Importador_XML
         {
             btnImportarXML.Enabled = true;
         }
+
+        private void txtCodigoCartorio_TextChanged(object sender, EventArgs e)
+        {
+            string arquivoSelecionado = txtNomeArquivo.Text;
+
+            // Verifica se o arquivo selecionado é válido
+            if (!string.IsNullOrEmpty(arquivoSelecionado))
+            {
+                clsXMLController.LerXML(arquivoSelecionado, dataGridView1, txtCodigoCartorio.Text, dtSelecionarData.Value, numPorcentagemCustas.Value);
+            }
+        }
     }
 }
